@@ -11,7 +11,6 @@ func main() {
 		ShowNotification("标题", "副标题", "内容", "http://www.baidu.com")
 		time.Sleep(5 * time.Second)
 	}
-
 }
 
 // 桌面通知
