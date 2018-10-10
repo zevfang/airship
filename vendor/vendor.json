@@ -1,0 +1,17 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "c2bqiFbZTEXHZx5Dg8eg8B3kM4w=",
+			"path": "github.com/deckarep/gosx-notifier",
+			"revision": "e127226297fb751aa3b582db5e92361fcbfc5a6c",
+			"revisionTime": "2018-02-01T03:58:17Z"
+		},
+		{
+			"path": "github.com/gocolly/colly",
+			"revision": ""
+		}
+	],
+	"rootPath": "airship"
+}
