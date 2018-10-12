@@ -1,17 +1,9 @@
-package main
+package notify
 
 import (
 	"github.com/deckarep/gosx-notifier"
 	"log"
-	"time"
 )
-
-func main() {
-	for {
-		ShowNotification("标题", "副标题", "内容", "http://www.baidu.com")
-		time.Sleep(5 * time.Second)
-	}
-}
 
 // 桌面通知
 func ShowNotification(title, subtitle, content, link string) {

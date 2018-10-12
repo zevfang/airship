@@ -1,0 +1,13 @@
+.cache
+.dockerignore
+.git
+.gitignore
+.github
+.vscode
+bin
+data*
+dist
+docker
+Dockerfile
+*.yml
+*.md

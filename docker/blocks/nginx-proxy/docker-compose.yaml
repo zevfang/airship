@@ -1,0 +1,3 @@
+nginxproxy:
+  build: docker/blocks/nginx_proxy
+  network_mode: host
