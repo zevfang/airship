@@ -1,4 +1,4 @@
-package spider
+package app
 
 // 微博热点爬取
 type WeiBo struct{}

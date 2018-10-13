@@ -1,9 +1,13 @@
-package notify
+package main
 
 import (
 	"github.com/deckarep/gosx-notifier"
 	"log"
 )
+
+func main() {
+	ShowNotification("a", "b", "v", "http://www.baidu.com")
+}
 
 // 桌面通知
 func ShowNotification(title, subtitle, content, link string) {
