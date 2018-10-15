@@ -1,7 +1,8 @@
 package main
 
-import "fmt"
+import "github.com/zevfang/airship/cmd/spider/app"
 
 func main() {
-	fmt.Println("q")
+	w := app.NewCollector()
+	w.QueryHot()
 }
