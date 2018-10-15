@@ -5,8 +5,6 @@ import (
 	"github.com/gocolly/colly"
 )
 
-const Uri = "https://s.weibo.com/top/summary?cate=realtimehot"
-
 // 微博热点爬取
 type WeiBo struct {
 	Collector colly.Collector
@@ -19,7 +17,7 @@ func NewCollector() WeiBo {
 }
 
 func (w *WeiBo) Login() {
-
+	w.Collector.Visit("http://ent.sina.com.cn/")
 }
 
 func (w *WeiBo) QueryHot() {
@@ -38,7 +36,7 @@ func (w *WeiBo) QueryHot() {
 			fmt.Println(id, target, href, hot)
 		})
 	})
-	w.Collector.Visit(Uri)
+	w.Collector.Visit("https://s.weibo.com/top/summary?cate=realtimehot")
 }
 
 func (w *WeiBo) Run() {
