@@ -10,8 +10,8 @@ type WeiBo struct {
 	Collector colly.Collector
 }
 
-func NewCollector() WeiBo {
-	return WeiBo{
+func NewCollector() *WeiBo {
+	return &WeiBo{
 		Collector: *colly.NewCollector(),
 	}
 }
