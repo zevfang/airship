@@ -1,10 +1,17 @@
-mysql:
-  image: mysql:5.6
-  environment:
-    MYSQL_ROOT_PASSWORD: rootpass
-    MYSQL_DATABASE: airship
-    MYSQL_USER: airship
-    MYSQL_PASSWORD: password
-  ports:
-  - "3306:3306"
-  command: [mysqld, --character-set-server=utf8mb4, --collation-server=utf8mb4_unicode_ci, --innodb_monitor_enable=all]
+version: '3'
+services:
+  mysql:
+    image: 'mysql:5.6'
+    container_name:
+      mysql
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: airship
+      MYSQL_USER: airship
+      MYSQL_PASSWORD: password
+
+    command: [mysqld, --character-set-server=utf8mb4, --collation-server=utf8mb4_unicode_ci, --innodb_monitor_enable=all]
