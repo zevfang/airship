@@ -3,6 +3,7 @@ package mongo
 import (
 	"github.com/zevfang/airship/pkg/adding"
 	"gopkg.in/mgo.v2"
+	"gopkg.in/mgo.v2/bson"
 )
 
 type Storage struct {
@@ -17,11 +18,18 @@ func NewStorage() (*Storage, error) {
 }
 
 // 添加文章
-func (s *Storage) AddArticle(a adding.Article) error {
+func (s *Storage) AddArticle(article adding.Article) error {
 	newA := Article{
-		Title:   a.Title,
-		Date:    a.Date,
-		Content: a.Content,
+		Title:   article.Title,
+		Date:    article.Date,
+		Content: article.Content,
 	}
 	return s.db.DB("airship").C("article").Insert(newA)
+}
+
+// 查询文章
+func (s *Storage) FindArticle(title string) ([]adding.Article, error) {
+	result := make([]adding.Article, 0)
+	err := s.db.DB("airship").C("article").Find(bson.M{"title": title}).All(result)
+	return result, err
 }
